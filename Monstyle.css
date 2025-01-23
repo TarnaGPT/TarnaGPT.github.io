@@ -48,3 +48,11 @@ body {
   background-repeat: no-repeat;
   background: linear-gradient(to top,rgb(255, 234, 0),rgb(255, 149, 0));
 }
+.video-container {
+  /* Propriétés CSS ici */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+}
