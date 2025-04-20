@@ -1,111 +1,33 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Ce document est de type HTML -->
+
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot IA</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
+<!-- In your <head> tag -->
+<script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+<style>
+  #webchat .bpWebchat {
+    position: unset;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+  }
 
-        #chatbox {
-            width: 80%;
-            max-width: 500px;
-            height: 400px;
-            overflow-y: auto;
-            border: 1px solid #ccc;
-            padding: 10px;
-            background: white;
-            margin: 20px auto;
-        }
+  #webchat .bpFab {
+    display: none;
+  }
+</style>
 
-        input {
-            width: 70%;
-            padding: 10px;
-            margin-top: 10px;
-        }
+<!-- Put this on your page BEFORE the script below -->
+<div id="webchat" style="width: 500px; height: 500px;"></div>
 
-        button {
-            padding: 10px;
-            cursor: pointer;
-            background: blue;
-            color: white;
-            border: none;
-        }
-
-        /* Loader animé */
-        #loader {
-            display: none;
-            margin: 10px auto;
-            font-size: 18px;
-        }
-
-        .loader-spinner {
-            border: 4px solid rgba(0, 0, 255, 0.3);
-            border-top: 4px solid blue;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Chatbot IA</h1>
-    <div id="chatbox"></div>
-    <div id="loader"><span class="loader-spinner"></span> L'IA réfléchit...</div>
-    <input type="text" id="userInput" placeholder="Écris un message..." />
-    <button onclick="sendMessage()">Envoyer</button>
-
-    <script>
-        async function sendMessage() {
-            let userInput = document.getElementById("userInput").value;
-            let chatbox = document.getElementById("chatbox");
-            let loader = document.getElementById("loader");
-
-            if (userInput.trim() === "") return; // Empêche d'envoyer un message vide
-
-            // Afficher le message de l'utilisateur
-            chatbox.innerHTML += `<p><b>Toi :</b> ${userInput}</p>`;
-
-            // Afficher le loader
-            loader.style.display = "block";
-
-            try {
-                // Envoyer la requête à OpenAssistant (ou un backend local si dispo)
-                let response = await fetch("https://api.open-assistant.io/generate", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ prompt: userInput, max_tokens: 100 })
-                });
-
-                let data = await response.json();
-
-                // Cacher le loader après la réponse de l'IA
-                loader.style.display = "none";
-
-                // Afficher la réponse du bot
-                chatbox.innerHTML += `<p><b>Bot :</b> ${data.text}</p>`;
-            } catch (error) {
-                loader.style.display = "none";
-                chatbox.innerHTML += `<p style="color:red;"><b>Erreur :</b> Impossible de contacter l'IA.</p>`;
-            }
-
-            // Vider le champ texte
-            document.getElementById("userInput").value = "";
-        }
-    </script>
-
-</body>
+<!-- In your <body> tag -->
+<script>
+  window.botpress.on("webchat:ready", () => {
+    window.botpress.open();
+  });
+  window.botpress.init({
+  "selector": "#webchat"
+});
+</script>
 </html>
+
