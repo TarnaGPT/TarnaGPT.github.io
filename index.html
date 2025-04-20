@@ -106,6 +106,14 @@ Mathématiques, physique, histoire, langues étrangères, ou encore rédaction d
 <a href="https://tarnagpt.fandom.com/fr/wiki/Wiki_TarnaGPT">Pour en savoir plus sur nous.</a> <!-- On sait vers quoi on clique, l'URL du château de Versailles ... -->
 <h2><i>TarnaGPT est une marque déposée. ©2025</i></h2>
 
+<script>
+  window.botpress.on("webchat:ready", () => {
+    window.botpress.open();
+  });
+  window.botpress.init({
+  "selector": "#webchat"
+});
+</script>
 
 </body> <!-- La fin du corps du programme -->   
 
