@@ -114,7 +114,28 @@ Mathématiques, physique, histoire, langues étrangères, ou encore rédaction d
   "selector": "#webchat"
 });
 </script>
-
+<script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+<script>
+  window.botpressWebChat.init({
+    "botId": "66dcaee9-5fd5-45d1-94b5-2cc296076ae9", // <-- remplace par ton ID
+    "hostUrl": "https://cdn.botpress.cloud/webchat/v2.3",
+    "messagingUrl": "https://messaging.botpress.cloud",
+    "clientId": "66dcaee9-5fd5-45d1-94b5-2cc296076ae9", // <-- idem ici
+    "webhookId": "default", 
+    "lazySocket": true,
+    "stylesheet": "https://cdn.botpress.cloud/webchat/v2.3/assets/modules/channel-web/custom.css",
+    "showPoweredBy": false,
+    "containerWidth": "100%",
+    "layoutWidth": "100%",
+    "hideWidget": true,
+    "showCloseButton": true,
+    "enableTranscriptDownload": true,
+    "themeName": "prism",
+    "theme": "light",
+    "botName": "TarnaGPT",
+    "avatarUrl": "TON_IMAGE_ICONE_OPTIONNELLE"
+  });
+</script>
 </body> <!-- La fin du corps du programme -->   
 
 </html> <!-- La fin du programme -->
