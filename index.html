@@ -5,21 +5,6 @@
 
 <head> <!-- Le début de l'en-tête = les métadonnées -->
      <title>TarnaGPT : un outil au service de votre réussite !</title> <!-- Pour les robots d'indexation de la page sur le WEB -->
-     <!-- In your <head> tag -->
-<script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
-<style>
-  #webchat .bpWebchat {
-    position: unset;
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    max-width: 100%;
-  }
-
-  #webchat .bpFab {
-    display: none;
-  }
-</style>
      <meta charset="UTF-8"> <!-- Encodage des caractères de la page -->
      <meta name="description" content="TarnaGPT, l'IA révolutionnaire pour aider les élèves ambitieux. Découvrez ses fonctionnalités et souscrivez dès maintenant.">
      <meta name="keywords" content="IA, aide aux devoirs, TarnaGPT, productivité, intelligence artificielle, élèves">
@@ -29,7 +14,6 @@
 <div id="header">
   					 
 <h6>TarnaGPT: l'allié des élèves ambitieux.</h6>
-     
 </div>
 </head>  <!-- La fin de l'en-tête -->
 
@@ -88,8 +72,12 @@ Mathématiques, physique, histoire, langues étrangères, ou encore rédaction d
 
 </p>
 </em>
-<!-- Put this on your page BEFORE the script below -->
-<div id="webchat" style="width: 500px; height: 500px;"></div>     
+<iframe
+    src="https://www.chatbase.co/chatbot-iframe/4BgmMVhEv_13lWbpBSGlw"
+    width="100%"
+    style="height: 100%; min-height: 700px"
+    frameborder="0"
+></iframe>
 <!-- L'auteur de l'article, la date --> <!-- L'identification, un pseudo éventuellement, une date de mise à jour -->
 <h3>N'attendez plus !</h3>
 <br/> <!-- Je saute une ligne dans mon texte --> 
@@ -106,36 +94,7 @@ Mathématiques, physique, histoire, langues étrangères, ou encore rédaction d
 <a href="https://tarnagpt.fandom.com/fr/wiki/Wiki_TarnaGPT">Pour en savoir plus sur nous.</a> <!-- On sait vers quoi on clique, l'URL du château de Versailles ... -->
 <h2><i>TarnaGPT est une marque déposée. ©2025</i></h2>
 
-<script>
-  window.botpress.on("webchat:ready", () => {
-    window.botpress.open();
-  });
-  window.botpress.init({
-  "selector": "#webchat"
-});
-</script>
-<script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
-<script>
-  window.botpressWebChat.init({
-    "botId": "66dcaee9-5fd5-45d1-94b5-2cc296076ae9", // <-- remplace par ton ID
-    "hostUrl": "https://cdn.botpress.cloud/webchat/v2.3",
-    "messagingUrl": "https://messaging.botpress.cloud",
-    "clientId": "66dcaee9-5fd5-45d1-94b5-2cc296076ae9", // <-- idem ici
-    "webhookId": "default", 
-    "lazySocket": true,
-    "stylesheet": "https://cdn.botpress.cloud/webchat/v2.3/assets/modules/channel-web/custom.css",
-    "showPoweredBy": false,
-    "containerWidth": "100%",
-    "layoutWidth": "100%",
-    "hideWidget": true,
-    "showCloseButton": true,
-    "enableTranscriptDownload": true,
-    "themeName": "prism",
-    "theme": "light",
-    "botName": "TarnaGPT",
-    "avatarUrl": "TON_IMAGE_ICONE_OPTIONNELLE"
-  });
-</script>
+
 </body> <!-- La fin du corps du programme -->   
 
 </html> <!-- La fin du programme -->
