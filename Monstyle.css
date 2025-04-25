@@ -1,7 +1,8 @@
 /* Je souhaite afficher les titres de taille h1 en couleur rouge, avec une hauteur de lignes égale à 5*/
 h1{
 color:rgb(0, 81, 255);
-font-size:50px
+font-size:50px;
+font-family: 'Times New Roman', Times, serif;
 }
 
 /* Je souhaite que le contenu des paragraphes, c'est à dire tout ce qui est contenu entre les balises <p> ... </p> soit noté en gris*/
@@ -20,15 +21,27 @@ h3{
 }
 
 #header {
-    height: 75px;
-    background-color:black ;
-    top : 0;
-}
+  height: 82.5px;
+  background-color: blue; /* Couleur du bandeau */
+  color: white; /* Couleur du texte */
+  display: flex;
+  justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+  position: fixed; /* Fixe en haut de la page */
+  top: 0;
+  left:0;
+  width: 100%;
+  z-index: 1000; /* Assure que le bandeau soit au-dessus du reste */
+  font-size: 20%; /* Taille du texte */
+  border-bottom-left-radius: 15px; /* Arrondi coin bas gauche */
+  border-bottom-right-radius: 15px; /* Arrondi coin bas droit */}
+
 
 h6 {
   text-align:center;
-  color: blue ;
-  font-size: 60px;
+  color: white ;
+  font-size: 50px;
+  margin: 0;
 }
 h4 {
   font-style: bold;
@@ -37,8 +50,9 @@ h4 {
 }
 
 h2 {
-  font-size: 9px;
-  color:white;
+  font-size: 10px;
+  color:aqua;
+  text-align: center;
 }
 
 body {
@@ -55,4 +69,13 @@ body {
   align-items: center;
   height: auto;
   width: 100%;
+}
+.h8 {
+  font-size: 15px;
+  top:0;
+}
+.header_gpt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
